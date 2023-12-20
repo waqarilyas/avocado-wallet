@@ -33,7 +33,7 @@ const supportedChains = [
     chainId: 137,
     name: 'Polygon',
     tokens: {
-      USDC: '0x625E7708f30cA75bfd92586e17077590C60eb4cD'
+      USDC: '0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359'
     }
   },
   {
@@ -41,7 +41,7 @@ const supportedChains = [
     chainId: 1,
     name: 'Ethereum',
     tokens: {
-      USDT: '0xdAC17F958D2ee523a2206206994597C13D831ec7'
+      USDT: '0xdac17f958d2ee523a2206206994597c13d831ec7'
     }
   },
   {

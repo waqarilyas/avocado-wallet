@@ -60,7 +60,7 @@ const EOAScreen = ({navigation}: any) => {
         <View style={styles.middleContainer}>
           <TouchableOpacity
             style={styles.copyContainer}
-            onPress={() => handleCopy(wallet?.privateKey)}>
+            onPress={() => handleCopy(wallet?.address)}>
             <Text style={[styles.text, styles.addressText]}>
               Address: {wallet?.address}
             </Text>
