@@ -1,5 +1,5 @@
 import Clipboard from '@react-native-clipboard/clipboard';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   ActivityIndicator,
   Dimensions,
@@ -11,12 +11,12 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Toast from 'react-native-toast-message';
-import {useWallet} from '../../context/walletContext';
+import { useWallet } from '../../context/walletContext';
 import styles from './styles';
 
-const {width} = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
-const EOAScreen = ({navigation}: any) => {
+const EOAScreen = ({ navigation }: any) => {
   const {
     handleWalletGeneration,
     wallet,
@@ -54,7 +54,7 @@ const EOAScreen = ({navigation}: any) => {
   };
 
   return (
-    <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{height:'100%'}}>
+    <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ height: '100%' }}>
       <View style={styles.container}>
         <Text style={styles.heading}>Externally Owned Account(EOA)</Text>
         <View style={styles.middleContainer}>
@@ -78,10 +78,9 @@ const EOAScreen = ({navigation}: any) => {
           <View style={styles.middleText}>
             {Object.keys(tokenBalances).map(key => {
               const value = key.split('-');
-
               return (
                 <Text style={styles.text} key={value[0]}>
-                  {value[0]}: {parseFloat(tokenBalances[key]).toFixed(2)}{' '}
+                  {value[0]}: {tokenBalances[key]}{' '}
                   {value[1]}
                 </Text>
               );

@@ -1,4 +1,4 @@
-import {HDNodeWallet, ethers, formatEther} from 'ethers';
+import {HDNodeWallet, ethers, formatEther,utils} from 'ethers';
 import {avocadoProvider, forwarder, supportedChains} from './constants';
 import {Wallet} from 'ethers';
 
@@ -43,11 +43,13 @@ export const fetchAccountErc20Balances = async (
         provider
       );
 
-      const senderBalance = await tokenContract.balanceOf(walletAddress);
-      const formattedBalance = formatEther(senderBalance);
+      const tokenBalance = await tokenContract.balanceOf(walletAddress);
+       
+  
+      const formattedBalance = (parseFloat(tokenBalance)/Math.pow(10,6)).toString();
 
       console.log(
-        `Balance for ${tokenName} on ${chain.name}: ${formattedBalance}`
+        `This Balance for ${tokenName} on ${chain.name}: ${formattedBalance}`
       );
 
       balances[`${chain.name}-${tokenName}`] = formattedBalance;

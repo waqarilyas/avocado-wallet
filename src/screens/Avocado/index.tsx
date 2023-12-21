@@ -32,10 +32,9 @@ const AvocadoScreen = ({navigation}: any) => {
         <View style={styles.middleText}>
           {Object.keys(avocadoBalance).map(key => {
             const value = key.split('-');
-
             return (
               <Text style={styles.text} key={value[0]}>
-                {value[0]}: {parseFloat(avocadoBalance[key]).toFixed(2)}{' '}
+                {value[0]}: {parseFloat(avocadoBalance[key])}{' '}
                 {value[1]}
               </Text>
             );
